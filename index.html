@@ -281,7 +281,8 @@ body.lb-open{overflow:hidden}
   var cur = -1, lb = $('#lb'), lbImg = $('#lbImg'), infoOpen = false;
 
   function panelHTML(p){
-    var h = '<h3>' + esc(p.id) + '</h3><p class="fname">' + esc(p.file) + '</p>';
+    var h = '<h3>' + esc(p.file) + '</h3><p class="fname">' +
+      p.w + ' × ' + p.h + (p.animated ? '  ·  animated' : '') + '</p>';
     h += '<table class="kv">' + p.summary.map(function(r){
       return '<tr><td>' + esc(r.k) + '</td><td>' + esc(r.v) + '</td></tr>';
     }).join('') + '</table>';
