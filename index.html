@@ -288,13 +288,14 @@ body.lb-open{overflow:hidden}
     }).join('') + '</table>';
     if (p.gps) {
       h += '<table class="kv" style="margin-top:14px">' +
-        '<tr><td>Latitude</td><td>' + p.gps.lat + '</td></tr>' +
-        '<tr><td>Longitude</td><td>' + p.gps.lon + '</td></tr>' +
+        '<tr><td>Latitude</td><td>' + p.gps.lat.toFixed(2) + '</td></tr>' +
+        '<tr><td>Longitude</td><td>' + p.gps.lon.toFixed(2) + '</td></tr>' +
         (p.gps.alt !== undefined ? '<tr><td>Altitude</td><td>' + p.gps.alt + ' m</td></tr>' : '') +
         (p.gps.dir !== undefined ? '<tr><td>Facing</td><td>' + p.gps.dir + '°</td></tr>' : '') +
         '</table><a class="maplink" target="_blank" rel="noopener noreferrer" href="https://www.openstreetmap.org/?mlat=' +
-        p.gps.lat + '&mlon=' + p.gps.lon + '#map=13/' + p.gps.lat + '/' + p.gps.lon +
-        '">View on map ↗</a>';
+        p.gps.lat + '&mlon=' + p.gps.lon + '#map=11/' + p.gps.lat + '/' + p.gps.lon +
+        '">View on map ↗</a>' +
+        '<p class="fname" style="margin:8px 0 0">Coordinates rounded to ~1 km.</p>';
     }
     var groups = Object.keys(p.raw), tags = 0;
     groups.forEach(function(g){ tags += Object.keys(p.raw[g]).length; });

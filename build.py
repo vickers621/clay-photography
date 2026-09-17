@@ -31,8 +31,22 @@ def exif_all():
     key = lambda d: os.path.basename(d['SourceFile'])
     return {key(d): d for d in pretty}, {key(d): d for d in numeric}
 
+GPS_COARSE = 2          # decimal places kept for published coordinates (~1.1 km)
+
+# Positional tags are removed from the raw dump outright: exiftool renders them
+# as DMS ("38 deg 38' 22.35\""), which stays house-precise under any decimal
+# rounding. The coarse pair in `gps` is the only location the site publishes.
+GPS_DROP = {'GPSLatitude', 'GPSLongitude', 'GPSPosition', 'GPSCoordinates',
+            'GPSHPositioningError', 'GPSDateTime', 'GPSTimeStamp', 'GPSDateStamp',
+            'GPSLatitudeRef', 'GPSLongitudeRef'}
+GPS_ROUND = {'GPSAltitude': 0, 'GPSImgDirection': 1, 'GPSDestBearing': 1, 'GPSSpeed': 1}
+
 def flatten(rec):
-    """Group -> {tag: value} for every EXIF group, skipping noise."""
+    """Group -> {tag: value} for every EXIF group, skipping noise.
+
+    Coordinates are deliberately coarsened here as well as in the summary, so
+    the published raw dump can never be more precise than the headline figure.
+    """
     skip_groups = {'ExifTool','ICC_Profile:ICC-header','Photoshop'}
     skip_tags = {'Directory','FileAccessDate','FileInodeChangeDate','FilePermissions',
                  'SourceFile','ThumbnailImage','PreviewImage','IPTCDigest',
@@ -44,6 +58,14 @@ def flatten(rec):
         clean = {k: val for k, val in v.items()
                  if k not in skip_tags and not isinstance(val, (dict, list))
                  and str(val).strip() != '' and len(str(val)) < 300}
+        for k in list(clean):
+            if k in GPS_DROP:
+                del clean[k]
+            elif k in GPS_ROUND:
+                m = re.match(r'\s*(-?\d+(?:\.\d+)?)(.*)$', str(clean[k]))
+                if m:
+                    num = round(float(m.group(1)), GPS_ROUND[k])
+                    clean[k] = '%s%s' % (int(num) if GPS_ROUND[k] == 0 else num, m.group(2))
         if clean:
             out[g.replace('File:System','File')] = clean
     return out
@@ -114,8 +136,9 @@ def main():
 
         gps = None
         if 'GPSLatitude' in n and 'GPSLongitude' in n:
-            gps = {'lat': round(n['GPSLatitude'], 6), 'lon': round(n['GPSLongitude'], 6)}
-            if 'GPSAltitude' in n:      gps['alt'] = round(n['GPSAltitude'], 1)
+            gps = {'lat': round(n['GPSLatitude'], GPS_COARSE),
+                   'lon': round(n['GPSLongitude'], GPS_COARSE), 'approx': True}
+            if 'GPSAltitude' in n:      gps['alt'] = round(n['GPSAltitude'])
             if 'GPSImgDirection' in n:  gps['dir'] = round(n['GPSImgDirection'], 1)
 
         photos[idx] = {
