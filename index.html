@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Clay Vickers — Photography</title>
+<meta name="description" content="Photographs by Clay Vickers. Water &amp; coast, cities &amp; architecture, land &amp; sky, aerials.">
+<meta property="og:title" content="Clay Vickers — Photography">
+<meta property="og:description" content="Water &amp; coast, cities &amp; architecture, land &amp; sky, aerials.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://clay.photography/">
+<meta property="og:image" content="https://clay.photography/img/thumb/img-5945.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='4' fill='%23141414'/><circle cx='16' cy='17' r='6.5' fill='none' stroke='%23f5f2ec' stroke-width='2'/><rect x='5' y='8' width='22' height='3' rx='1.5' fill='%23f5f2ec'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#f7f5f1; --ink:#15150f; --muted:#6f6c62; --rule:#dedad2; --accent:#8a3d1f;
+  --serif:"Fraunces",Georgia,"Times New Roman",serif;
+  --sans:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --gap:10px; --pad:clamp(18px,4vw,56px);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);
+  font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+img{display:block;max-width:100%}
+
+/* ---------- masthead ---------- */
+header.masthead{padding:clamp(48px,9vw,110px) var(--pad) clamp(26px,4vw,44px);
+  border-bottom:1px solid var(--rule)}
+.wordmark{font-family:var(--serif);font-weight:300;font-size:clamp(40px,8.5vw,86px);
+  line-height:.95;letter-spacing:-.025em;margin:0}
+.wordmark em{font-style:italic;font-weight:400}
+.standfirst{margin:clamp(16px,2.4vw,24px) 0 0;max-width:46ch;color:var(--muted);
+  font-size:clamp(14px,1.35vw,16.5px)}
+.standfirst b{color:var(--ink);font-weight:600}
+
+/* ---------- sticky nav ---------- */
+nav.groups{position:sticky;top:0;z-index:40;background:rgba(247,245,241,.93);
+  backdrop-filter:saturate(1.6) blur(10px);border-bottom:1px solid var(--rule)}
+nav.groups ul{display:flex;gap:clamp(14px,2.5vw,30px);list-style:none;margin:0;
+  padding:12px var(--pad);overflow-x:auto;scrollbar-width:none}
+nav.groups ul::-webkit-scrollbar{display:none}
+nav.groups a{text-decoration:none;white-space:nowrap;font-size:12px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--muted);padding-bottom:2px;
+  border-bottom:1px solid transparent;transition:color .2s,border-color .2s}
+nav.groups a:hover,nav.groups a[aria-current="true"]{color:var(--ink);border-color:var(--accent)}
+nav.groups .count{font-family:var(--mono);font-size:10px;opacity:.55;margin-left:5px}
+
+/* ---------- sections + justified grid ---------- */
+main{padding:0 var(--pad) clamp(60px,10vw,120px)}
+section.group{padding-top:clamp(42px,6vw,76px);scroll-margin-top:52px}
+.group-head{display:flex;align-items:baseline;gap:14px;margin-bottom:clamp(16px,2vw,24px)}
+.group-head h2{font-family:var(--serif);font-weight:400;font-size:clamp(22px,3.2vw,34px);
+  letter-spacing:-.015em;margin:0}
+.group-head .rule{flex:1;height:1px;background:var(--rule)}
+.group-head .n{font-family:var(--mono);font-size:11px;color:var(--muted)}
+
+.row{display:flex;gap:var(--gap);margin-bottom:var(--gap)}
+.row:last-child{margin-bottom:0}
+figure.shot{margin:0;position:relative;overflow:hidden;background:#e8e4dd;cursor:zoom-in}
+figure.shot img{width:100%;height:100%;object-fit:cover;
+  transition:transform .55s cubic-bezier(.2,.7,.3,1),filter .35s;
+  opacity:0;animation:fade .5s ease forwards}
+@keyframes fade{to{opacity:1}}
+figure.shot:hover img{transform:scale(1.035)}
+figure.shot figcaption{position:absolute;inset:auto 0 0 0;padding:26px 12px 9px;
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.02em;color:#fff;
+  background:linear-gradient(transparent,rgba(0,0,0,.62));
+  opacity:0;transition:opacity .25s;pointer-events:none;
+  display:flex;justify-content:space-between;gap:10px}
+figure.shot:hover figcaption,figure.shot:focus-visible figcaption{opacity:1}
+figure.shot:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.badge-gif{position:absolute;top:9px;left:9px;font-family:var(--mono);font-size:9px;
+  letter-spacing:.12em;background:rgba(0,0,0,.6);color:#fff;padding:3px 6px;border-radius:2px}
+@media (prefers-reduced-motion:reduce){
+  figure.shot img{animation:none;opacity:1;transition:none}
+  figure.shot:hover img{transform:none}
+}
+
+/* ---------- footer ---------- */
+footer{border-top:1px solid var(--rule);padding:clamp(28px,4vw,44px) var(--pad);
+  display:flex;flex-wrap:wrap;gap:12px 28px;align-items:baseline;
+  font-size:12.5px;color:var(--muted)}
+footer a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--rule)}
+footer a:hover{border-color:var(--accent)}
+footer .spacer{flex:1}
+
+/* ---------- lightbox ---------- */
+.lb{position:fixed;inset:0;z-index:100;background:#0e0e0c;color:#efece5;
+  display:none;grid-template-columns:1fr;grid-template-rows:1fr auto}
+.lb[open]{display:grid}
+.lb-stage{grid-column:1;grid-row:1;position:relative;min-height:0;display:flex;align-items:center;
+  justify-content:center;padding:clamp(14px,3vw,40px)}
+.lb-stage img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;
+  box-shadow:0 30px 80px rgba(0,0,0,.6)}
+.lb-bar{grid-column:1;grid-row:2;display:flex;align-items:center;gap:10px;padding:10px clamp(12px,3vw,24px);
+  border-top:1px solid #23231f;font-family:var(--mono);font-size:11px;color:#9b978d}
+.lb-bar .grow{flex:1}
+.lb button{font:inherit;font-family:var(--mono);font-size:11px;letter-spacing:.08em;
+  text-transform:uppercase;background:transparent;color:#efece5;border:1px solid #2e2e29;
+  padding:7px 12px;border-radius:2px;cursor:pointer;transition:background .18s,border-color .18s}
+.lb button:hover{background:#1b1b18;border-color:#4a4a42}
+.lb button[aria-pressed="true"]{background:#efece5;color:#12120f;border-color:#efece5}
+.nav-arrow{position:absolute;top:50%;transform:translateY(-50%);width:clamp(42px,6vw,60px);
+  height:clamp(42px,6vw,60px);border-radius:50%;display:grid;place-items:center;
+  background:rgba(20,20,18,.55);border:1px solid #2e2e29;cursor:pointer;font-size:18px;
+  color:#efece5;transition:background .18s}
+.nav-arrow:hover{background:rgba(40,40,36,.9)}
+.nav-arrow.prev{left:clamp(8px,1.6vw,20px)} .nav-arrow.next{right:clamp(8px,1.6vw,20px)}
+.lb-close{position:absolute;top:clamp(10px,2vw,20px);right:clamp(10px,2vw,20px);z-index:3}
+
+/* info panel */
+.lb.info-open{grid-template-columns:1fr minmax(300px,var(--panel-w,380px))}
+.panel{display:none;grid-column:2;grid-row:1 / span 2;overflow-y:auto;min-height:0;
+  border-left:1px solid #23231f;background:#121210;padding:clamp(18px,2.2vw,28px)}
+.lb.info-open .panel{display:block}
+.panel h3{font-family:var(--serif);font-weight:400;font-size:19px;margin:0 0 2px;color:#f6f3ec}
+.panel .fname{font-family:var(--mono);font-size:10.5px;color:#7e7a71;
+  margin:0 0 18px;word-break:break-all}
+.kv{width:100%;border-collapse:collapse;font-size:12.5px}
+.kv td{padding:5px 0;vertical-align:top;border-bottom:1px solid #1e1e1b}
+.kv td:first-child{color:#8e8a80;width:43%;padding-right:12px}
+.kv td:last-child{font-family:var(--mono);font-size:11.5px;color:#e6e2da;word-break:break-word}
+.panel .maplink{display:inline-block;margin-top:10px;font-family:var(--mono);font-size:11px;
+  color:#d9d4c9;border-bottom:1px solid #3a3a33;text-decoration:none}
+.panel .maplink:hover{border-color:#c98b63}
+details.raw{margin-top:22px;border-top:1px solid #23231f;padding-top:16px}
+details.raw>summary{cursor:pointer;font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;
+  text-transform:uppercase;color:#9b978d;list-style:none}
+details.raw>summary::-webkit-details-marker{display:none}
+details.raw>summary::before{content:"▸ ";color:#6d6a61}
+details.raw[open]>summary::before{content:"▾ "}
+details.raw h4{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;
+  color:#c98b63;margin:18px 0 4px}
+@media (max-width:820px){
+  .lb.info-open{grid-template-columns:1fr;grid-template-rows:minmax(0,1fr) auto minmax(0,44vh)}
+  .panel{grid-column:1;grid-row:3;border-left:none;border-top:1px solid #23231f}
+}
+body.lb-open{overflow:hidden}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <h1 class="wordmark">Clay Vickers<br><em>Photography</em></h1>
+  <p class="standfirst">Pictures taken while going places. Grouped by what's in them —
+    <b>click any frame</b> for the full file: camera, lens, exposure, coordinates,
+    and every EXIF tag the image still carries.</p>
+</header>
+
+<nav class="groups" aria-label="Sections"><ul id="nav"></ul></nav>
+
+<main id="main"></main>
+
+<footer>
+  <span>© <span id="yr"></span> Clay Vickers</span>
+  <span id="stat"></span>
+  <span class="spacer"></span>
+  <a href="mailto:hello@clay.photography">hello@clay.photography</a>
+</footer>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Photo viewer">
+  <div class="lb-stage">
+    <button class="nav-arrow prev" id="prev" aria-label="Previous photo">←</button>
+    <img id="lbImg" alt="">
+    <button class="nav-arrow next" id="next" aria-label="Next photo">→</button>
+    <button class="lb-close" id="close" aria-label="Close viewer">Close ✕</button>
+  </div>
+  <div class="lb-bar">
+    <span id="pos"></span>
+    <span id="lbMeta" class="grow"></span>
+    <button id="infoBtn" aria-pressed="false">Info</button>
+  </div>
+  <aside class="panel" id="panel" aria-label="Photo metadata"></aside>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var TARGET = 300, MAXH = 460, flat = [], data = null;
+  var $ = function(s){ return document.querySelector(s); };
+  var esc = function(s){ return String(s).replace(/[&<>"]/g, function(c){
+    return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]; }); };
+
+  /* ---- justified rows: greedy fill to container width ---- */
+  function layout(){
+    var pad = parseFloat(getComputedStyle(document.body).getPropertyValue('--gap')) || 10;
+    document.querySelectorAll('section.group').forEach(function(sec){
+      var W = sec.clientWidth, shots = [].slice.call(sec.querySelectorAll('figure.shot'));
+      if (!W || !shots.length) return;
+      var narrow = W < 600, perRowMax = narrow ? 2 : 4;
+      [].slice.call(sec.querySelectorAll('.row')).forEach(function(r){
+        while (r.firstChild) sec.appendChild(r.firstChild); r.remove();
+      });
+      var row = [], ar = 0;
+      function flush(last){
+        var el = document.createElement('div'); el.className = 'row';
+        var gaps = (row.length - 1) * pad, avail = W - gaps;
+        var h = avail / ar;
+        if (last) h = Math.min(h, narrow ? 260 : MAXH);
+        h = Math.min(h, MAXH * 1.25);
+        row.forEach(function(f){
+          f.style.width = (h * f._ar) + 'px';
+          f.style.height = h + 'px';
+          f.style.flex = '1 1 ' + (h * f._ar) + 'px';
+          el.appendChild(f);
+        });
+        sec.appendChild(el); row = []; ar = 0;
+      }
+      shots.forEach(function(f){
+        row.push(f); ar += f._ar;
+        var gaps = (row.length - 1) * pad;
+        if ((W - gaps) / ar <= TARGET || row.length >= perRowMax) flush(false);
+      });
+      if (row.length) flush(true);
+    });
+  }
+
+  function build(d){
+    data = d;
+    var nav = $('#nav'), main = $('#main'), n = 0;
+    d.groups.forEach(function(g){
+      nav.insertAdjacentHTML('beforeend',
+        '<li><a href="#' + g.id + '">' + esc(g.title) +
+        '<span class="count">' + g.photos.length + '</span></a></li>');
+      var sec = document.createElement('section');
+      sec.className = 'group'; sec.id = g.id;
+      sec.innerHTML = '<div class="group-head"><h2>' + esc(g.title) +
+        '</h2><span class="rule"></span><span class="n">' + g.photos.length + '</span></div>';
+      g.photos.forEach(function(p){
+        p._i = n++; flat.push(p);
+        var f = document.createElement('figure');
+        f.className = 'shot'; f.tabIndex = 0; f.setAttribute('role','button');
+        f.setAttribute('aria-label','Open photo ' + p.id);
+        f._ar = p.w / p.h;
+        var cam = (p.summary.find(function(r){ return r.k === 'Camera'; }) || {}).v || '';
+        f.innerHTML = '<img loading="lazy" decoding="async" src="' + p.thumb +
+          '" width="' + p.w + '" height="' + p.h + '" alt="">' +
+          (p.animated ? '<span class="badge-gif">GIF</span>' : '') +
+          '<figcaption><span>' + esc(cam) + '</span><span>' + esc(p.taken) + '</span></figcaption>';
+        f.addEventListener('click', function(){ open(p._i); });
+        f.addEventListener('keydown', function(e){
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(p._i); }
+        });
+        sec.appendChild(f);
+      });
+      main.appendChild(sec);
+    });
+    $('#yr').textContent = new Date().getFullYear();
+    $('#stat').textContent = flat.length + ' photographs';
+    layout();
+    spy();
+    if (location.hash) {
+      var hit = flat.findIndex(function(p){ return '#' + p.id === location.hash; });
+      if (hit > -1) open(hit);
+    }
+  }
+
+  /* ---- section highlighting ---- */
+  function spy(){
+    var links = [].slice.call(document.querySelectorAll('nav.groups a'));
+    var obs = new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if (!e.isIntersecting) return;
+        links.forEach(function(a){
+          a.setAttribute('aria-current', a.getAttribute('href') === '#' + e.target.id);
+        });
+      });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    document.querySelectorAll('section.group').forEach(function(s){ obs.observe(s); });
+  }
+
+  /* ---- lightbox ---- */
+  var cur = -1, lb = $('#lb'), lbImg = $('#lbImg'), infoOpen = false;
+
+  function panelHTML(p){
+    var h = '<h3>' + esc(p.id) + '</h3><p class="fname">' + esc(p.file) + '</p>';
+    h += '<table class="kv">' + p.summary.map(function(r){
+      return '<tr><td>' + esc(r.k) + '</td><td>' + esc(r.v) + '</td></tr>';
+    }).join('') + '</table>';
+    if (p.gps) {
+      h += '<table class="kv" style="margin-top:14px">' +
+        '<tr><td>Latitude</td><td>' + p.gps.lat + '</td></tr>' +
+        '<tr><td>Longitude</td><td>' + p.gps.lon + '</td></tr>' +
+        (p.gps.alt !== undefined ? '<tr><td>Altitude</td><td>' + p.gps.alt + ' m</td></tr>' : '') +
+        (p.gps.dir !== undefined ? '<tr><td>Facing</td><td>' + p.gps.dir + '°</td></tr>' : '') +
+        '</table><a class="maplink" target="_blank" rel="noopener noreferrer" href="https://www.openstreetmap.org/?mlat=' +
+        p.gps.lat + '&mlon=' + p.gps.lon + '#map=13/' + p.gps.lat + '/' + p.gps.lon +
+        '">View on map ↗</a>';
+    }
+    var groups = Object.keys(p.raw), tags = 0;
+    groups.forEach(function(g){ tags += Object.keys(p.raw[g]).length; });
+    h += '<details class="raw"><summary>All EXIF — ' + tags + ' tags</summary>';
+    groups.forEach(function(g){
+      h += '<h4>' + esc(g) + '</h4><table class="kv">';
+      Object.keys(p.raw[g]).forEach(function(k){
+        h += '<tr><td>' + esc(k) + '</td><td>' + esc(p.raw[g][k]) + '</td></tr>';
+      });
+      h += '</table>';
+    });
+    return h + '</details>';
+  }
+
+  function open(i){
+    cur = (i + flat.length) % flat.length;
+    var p = flat[cur];
+    lbImg.src = p.full; lbImg.alt = p.id;
+    $('#pos').textContent = (cur + 1) + ' / ' + flat.length;
+    var cam = (p.summary.find(function(r){ return r.k === 'Camera'; }) || {}).v || '';
+    var lens = (p.summary.find(function(r){ return r.k === 'Aperture'; }) || {}).v || '';
+    var sh = (p.summary.find(function(r){ return r.k === 'Shutter'; }) || {}).v || '';
+    var iso = (p.summary.find(function(r){ return r.k === 'ISO'; }) || {}).v || '';
+    $('#lbMeta').textContent = [cam, lens, sh, iso && 'ISO ' + iso, p.taken]
+      .filter(Boolean).join('  ·  ');
+    $('#panel').innerHTML = panelHTML(p);
+    $('#panel').scrollTop = 0;
+    lb.setAttribute('open', ''); document.body.classList.add('lb-open');
+    history.replaceState(null, '', '#' + p.id);
+    [1, -1].forEach(function(d){
+      var im = new Image(); im.src = flat[(cur + d + flat.length) % flat.length].full;
+    });
+  }
+  function close(){
+    lb.removeAttribute('open'); document.body.classList.remove('lb-open');
+    lbImg.src = ''; history.replaceState(null, '', location.pathname + location.search);
+  }
+  $('#next').addEventListener('click', function(){ open(cur + 1); });
+  $('#prev').addEventListener('click', function(){ open(cur - 1); });
+  $('#close').addEventListener('click', close);
+  $('#infoBtn').addEventListener('click', function(){
+    infoOpen = !infoOpen;
+    lb.classList.toggle('info-open', infoOpen);
+    this.setAttribute('aria-pressed', infoOpen);
+  });
+  document.addEventListener('keydown', function(e){
+    if (!lb.hasAttribute('open')) return;
+    if (e.key === 'Escape') close();
+    else if (e.key === 'ArrowRight') open(cur + 1);
+    else if (e.key === 'ArrowLeft') open(cur - 1);
+    else if (e.key.toLowerCase() === 'i') $('#infoBtn').click();
+  });
+  var sx = 0;
+  lb.addEventListener('touchstart', function(e){ sx = e.changedTouches[0].clientX; }, {passive:true});
+  lb.addEventListener('touchend', function(e){
+    var dx = e.changedTouches[0].clientX - sx;
+    if (Math.abs(dx) > 55) open(cur + (dx < 0 ? 1 : -1));
+  }, {passive:true});
+
+  var t; addEventListener('resize', function(){ clearTimeout(t); t = setTimeout(layout, 120); });
+
+  fetch('data.json').then(function(r){ return r.json(); }).then(build).catch(function(e){
+    $('#main').innerHTML = '<p style="padding:40px 0;color:#8a3d1f">' +
+      'Could not load data.json — serve this folder over http, not file://</p>';
+    console.error(e);
+  });
+})();
+</script>
+</body>
+</html>
